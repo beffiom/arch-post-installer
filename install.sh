@@ -37,7 +37,7 @@ clear
 
 echo "Installing packages..."
 sleep 3s
-	sudo pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xf86-video-fbdev xorg-backlight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf libcups cups
+	sudo pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xf86-video-fbdev xorg-backlight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf
 	sudo pacman -Sy xf86-video-intel libva-intel-driver
 	sudo pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
 	sudo pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
@@ -52,7 +52,7 @@ sleep 3s
 	sudo pacman -Sy mpd mpc ncmpcpp
 	sudo pacman -Sy zathura zathura-cb zathura-djvu zathura-pdf-mupdf
 	sudo pacman -Sy neofetch cmatrix
-	sudo pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice gimp kdenlive nicotine+ transmission-gtk lxappearance
+	sudo pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice lxappearance
 	sudo pacman -Sy libvirt qemu virt-manager ebtables dnsmasq
 	# sudo pacman -S minetest retroarch ppsspp
 
@@ -97,6 +97,7 @@ sleep 3s
 	sudo usermod -aG audio $USER
 	sudo usermod -aG video $USER
 	sudo usermod -aG wheel $USER
+	# sudo usermod -aG libvirt $USER
 
 	sudo pacman -Syu
 clear
