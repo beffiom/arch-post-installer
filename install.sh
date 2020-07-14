@@ -2,10 +2,10 @@
 # Arch Linux post-install script
 
 bypass() {
-	sudo -v
+	doas -v
 	while true;
 	do
-	  sudo -n true
+	  doas -n true
 	  sleep 45
 	  kill -0 "$$" || exit
 	done 2>/dev/null &
@@ -19,88 +19,88 @@ clear
 
 echo "Importing files from server..."
 sleep 3s
-	sudo pacman -Sy git rsync
-	sudo rm -rvf ~/.*
+	doas pacman -Sy git rsync
+	doas rm -rvf ~/.*
 	git clone https://github.com/beffiom/dotfiles/
-	sudo rsync -rav ~/void-post-installer/dotfiles/.* ~/
-	sudo rm -rvf ~/.git/
-	sudo rm -rvf ~/dotfiles
+	doas rsync -rav ~/void-post-installer/dotfiles/.* ~/
+	doas rm -rvf ~/.git/
+	doas rm -rvf ~/dotfiles
 	mkdir ~/Videos ~/Devices ~/Devices/A:A_Drive ~/Downloads ~/Music
 
 clear
 
 echo "Updating system..."
 sleep 3s
-	sudo pacman -Su
+	doas pacman -Su
 
 clear
 
 echo "Installing packages..."
 sleep 3s
-	sudo pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xf86-video-fbdev xorg-backlight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf
-	sudo pacman -Sy xf86-video-intel libva-intel-driver
-	sudo pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
-	sudo pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
-	sudo pacman -Sy p7zip libzip unzip unrar
-	sudo pacman -Sy python python-pip python-pyperclip
-	sudo pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-ubuntu-font-family
-	sudo pacman -Sy bspwm compton sxhkd
-	sudo pacman -Sy qutebrowser
-	sudo pacman -Sy ffmpeg imagemagick maim sxiv
-	sudo pacman -Sy ffmpegthumbnailer ffmpegthumbs poppler vifm pcmanfm inotify-tools
-	sudo pacman -Sy mpv youtube-dl newsboat rtorrent
-	sudo pacman -Sy mpd mpc ncmpcpp
-	sudo pacman -Sy zathura zathura-cb zathura-djvu zathura-pdf-mupdf
-	sudo pacman -Sy neofetch cmatrix
-	sudo pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice lxappearance
-	sudo pacman -Sy libvirt qemu virt-manager ebtables dnsmasq
-	# sudo pacman -S minetest retroarch ppsspp lutris pcsx2 openttd dolphin-emu
+	doas pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xf86-video-fbdev xorg-backlight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf
+	doas pacman -Sy xf86-video-intel libva-intel-driver
+	doas pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+	doas pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
+	doas pacman -Sy p7zip libzip unzip unrar
+	doas pacman -Sy python python-pip python-pyperclip
+	doas pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-ubuntu-font-family
+	doas pacman -Sy bspwm compton sxhkd
+	doas pacman -Sy qutebrowser
+	doas pacman -Sy ffmpeg imagemagick maim sxiv
+	doas pacman -Sy ffmpegthumbnailer ffmpegthumbs poppler vifm pcmanfm inotify-tools
+	doas pacman -Sy mpv youtube-dl newsboat rtorrent
+	doas pacman -Sy mpd mpc ncmpcpp
+	doas pacman -Sy zathura zathura-cb zathura-djvu zathura-pdf-mupdf
+	doas pacman -Sy neofetch cmatrix
+	doas pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice lxappearance
+	doas pacman -Sy libvirt qemu virt-manager ebtables dnsmasq
+	# doas pacman -S minetest retroarch ppsspp lutris pcsx2 openttd dolphin-emu
 
-	sudo pip install bs4
-	sudo pip install urllib5
-	sudo pip install ueberzug
-	sudo pip install keepmenu
-	sudo pip install castero
+	doas pip install bs4
+	doas pip install urllib5
+	doas pip install ueberzug
+	doas pip install keepmenu
+	doas pip install castero
 
-	sudo pacman -Rns $(pacman -Qtdq)
+	doas pacman -Rns $(pacman -Qtdq)
 
 clear
 
 echo "Configuring system..."
 sleep 3s
 
-	sudo systemctl enable connman
+	doas systemctl enable connman
 
-	sudo ln -sf /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
-	sudo ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-	sudo ln -sf /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-	sudo ln -sf /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
-	sudo ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+	doas ln -sf /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
+	doas ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+	doas ln -sf /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+	doas ln -sf /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
+	doas ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
-	sudo ln -s /bin/dash /bin/sh
+	doas ln -s /bin/dash /bin/sh
 
-	sudo chmod +x ~/.local/bin/*
-	sudo chmod +x ~/.config/bspwm/*
-	sudo chmod +x ~/.config/sxhkd/*
+	doas chmod +x ~/.local/bin/*
+	doas chmod +x ~/.config/bspwm/*
+	doas chmod +x ~/.config/sxhkd/*
 
 	xmodmap ~/.config/appearance/Xmodmap
 
 	# Finish
 	cd ~/
-	sudo resolvconf -u
+	doas resolvconf -u
 
 clear
 
 echo "Adding user to some groups..."
 sleep 3s
-	sudo usermod -aG input $USER
-	sudo usermod -aG audio $USER
-	sudo usermod -aG video $USER
-	sudo usermod -aG wheel $USER
-	sudo usermod -aG libvirt $USER
-	sudo usermod -aG kvm $USER
+	doas usermod -aG input $USER
+	doas usermod -aG audio $USER
+	doas usermod -aG video $USER
+	doas usermod -aG wheel $USER
+	doas usermod -aG libvirt $USER
+	doas usermod -aG kvm $USER
 
-	sudo pacman -Syu
+	doas pacman -Syu
 clear
 
-echo "Don't forget to install st, dmenu, and slock with sudo make clean install"
+echo "Don't forget to install st, dmenu, and slock with doas make clean install"
