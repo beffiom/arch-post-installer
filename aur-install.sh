@@ -7,6 +7,11 @@
 yay -S ttf-ms-fonts
 yay -S polybar
 # yay -S qtwebflix-git
+# yay -S openrct2
+# yay -S unciv
+# yay -S runelite
+# yay -S rpcs3-git
+# yay -S ungoogled-chromium
 yay -S rtl8821ce-dkms-git
 yay -S plata-theme
 yay -S kiwix-tools

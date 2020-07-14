@@ -43,18 +43,18 @@ sleep 3s
 	sudo pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
 	sudo pacman -Sy p7zip libzip unzip unrar
 	sudo pacman -Sy python python-pip python-pyperclip
-	sudo pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji
+	sudo pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-ubuntu-font-family
 	sudo pacman -Sy bspwm compton sxhkd
 	sudo pacman -Sy qutebrowser
 	sudo pacman -Sy ffmpeg imagemagick maim sxiv
 	sudo pacman -Sy ffmpegthumbnailer ffmpegthumbs poppler vifm pcmanfm inotify-tools
-	sudo pacman -Sy mpv youtube-dl newsboat
+	sudo pacman -Sy mpv youtube-dl newsboat rtorrent
 	sudo pacman -Sy mpd mpc ncmpcpp
 	sudo pacman -Sy zathura zathura-cb zathura-djvu zathura-pdf-mupdf
 	sudo pacman -Sy neofetch cmatrix
 	sudo pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice lxappearance
 	sudo pacman -Sy libvirt qemu virt-manager ebtables dnsmasq
-	# sudo pacman -S minetest retroarch ppsspp lutris pcsx2
+	# sudo pacman -S minetest retroarch ppsspp lutris pcsx2 openttd dolphin-emu
 
 	sudo pip install bs4
 	sudo pip install urllib5
