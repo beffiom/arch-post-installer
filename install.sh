@@ -41,7 +41,7 @@ sleep 3s
 	sudo pacman -Sy xf86-video-intel libva-intel-driver
 	sudo pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
 	sudo pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
-	sudo pacman -Sy p7zip libzip unzip zip
+	sudo pacman -Sy p7zip libzip unzip unrar
 	sudo pacman -Sy python python-pip python-pyperclip
 	sudo pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji
 	sudo pacman -Sy bspwm compton sxhkd
@@ -54,7 +54,7 @@ sleep 3s
 	sudo pacman -Sy neofetch cmatrix
 	sudo pacman -Sy gtk3 papirus-icon-theme capitaine-cursors libreoffice lxappearance
 	sudo pacman -Sy libvirt qemu virt-manager ebtables dnsmasq
-	# sudo pacman -S minetest retroarch ppsspp
+	# sudo pacman -S minetest retroarch ppsspp lutris pcsx2
 
 	sudo pip install bs4
 	sudo pip install urllib5
@@ -97,7 +97,8 @@ sleep 3s
 	sudo usermod -aG audio $USER
 	sudo usermod -aG video $USER
 	sudo usermod -aG wheel $USER
-	# sudo usermod -aG libvirt $USER
+	sudo usermod -aG libvirt $USER
+	sudo usermod -aG kvm $USER
 
 	sudo pacman -Syu
 clear
