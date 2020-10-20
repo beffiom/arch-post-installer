@@ -40,7 +40,7 @@ sleep 3s
 	doas pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xorg-xrandr xf86-video-fbdev xorg-xbacklight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf go cmake
 	doas pacman -Sy xf86-video-intel libva-intel-driver
 	doas pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
-	doas pacman -Sy acpi acpid bash-completion connman curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
+	doas pacman -Sy acpi acpid bash-completion networkmanager curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
 	doas pacman -Sy p7zip libzip unzip unrar
 	doas pacman -Sy python python-pip python-pyperclip
 	doas pacman -Sy fontconfig ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-hack adobe-source-code-pro-fonts powerline powerline-fonts man
