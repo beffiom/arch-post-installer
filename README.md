@@ -7,8 +7,13 @@ installs my dotfiles and key programs after a minimal arch linux install
 3. pacman -Sy opendoas neovim
 4. nvim /etc/doas.conf
 5. add "permit nopass :wheel"
-6. `git clone https://github.com/beffiom/arch-post-installer`
-7. `cd arch-post-installer`
-8. `. install.sh`
-9. install yay
-10. `. aur-install.sh`
+6. add user to wheel group (usermod -aG wheel [username]
+7. logout root + login user
+8. install yay
+    * cd ~/.config
+    * wget https://aur.archlinux.org/yay.git
+    * cd yay
+    * makepkg -si
+9. `git clone https://github.com/beffiom/arch-post-installer`
+10. `cd arch-post-installer`
+11. `. install.sh`
