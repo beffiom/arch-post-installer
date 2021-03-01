@@ -39,7 +39,7 @@ echo "Installing packages..."
 sleep 3s
 	doas pacman -Sy linux linux-firmware linux-headers xorg-server xf86-input-libinput xf86-input-synaptics xorg-xrandr xf86-video-fbdev xorg-xbacklight xautolock xclip xorg-xclipboard xorg-xinit xorg-xmodmap xscreensaver xwallpaper libva make gcc base-devel libx11 libxrandr libxft libxinerama pkgconf go cmake
 	doas pacman -Sy xf86-video-intel libva-intel-driver
-	doas pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+	doas pacman -Sy alsa-utils pulseaudio alsa-plugins pulseaudio-alsa pulseaudio-bluetooth bluez bluez-utils
 	doas pacman -Sy acpi acpid bash-completion networkmanager curl dash dunst htop libnotify neovim pulsemixer redshift wget wpa_supplicant unclutter hunspell hunspell-en_US mythes mythes-en
 	doas pacman -Sy p7zip libzip unzip unrar
 	doas pacman -Sy python python-pip python-pyperclip
@@ -47,7 +47,7 @@ sleep 3s
 	doas pacman -Sy bspwm compton sxhkd
 	doas pacman -Sy ffmpeg imagemagick maim sxiv
 	doas pacman -Sy ffmpegthumbnailer ffmpegthumbs poppler vifm pcmanfm inotify-tools
-	doas pacman -Sy mpv youtube-dl rtorrent kodi playerctl
+	doas pacman -Sy mpv youtube-dl rtorrent kodi playerctl kodi-addon-peripheral-joystick kodi-addon-inputstream-adaptive
 	doas pacman -Sy mpd mpc ncmpcpp
 	doas pacman -Sy zathura zathura-cb zathura-djvu zathura-pdf-mupdf
 	doas pacman -Sy neofetch cmatrix
@@ -69,11 +69,12 @@ sleep 3s
     doas pacman -Sy emacs asciidoc
     yay -S ttf-ms-fonts
     yay -S polybar
-    yay -S rtl8821cd-dkms-git
+    yay -S rtl8821ce-dkms-git
+    yay -S picom-ibhagwan-git
     yay -S libxft-bgra-git
     yay -S mpv-mpris
     yay -S nerd-fonts-complete
-    yay -S networkmanager_dmenu
+    yay -S networkmanager-dmenu-git
 
 	doas pacman -Rns $(pacman -Qtdq)
 
